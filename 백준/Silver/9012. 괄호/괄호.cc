@@ -8,14 +8,14 @@ int main() {
 
 	int n;
 	string str;
-	stack <char> s;
+	
 
 	cin >> n;
 
 	for (int i = 0; i < n; i++) {
+		stack <char> s;
 		string answer = "YES";
 		cin >> str;
-		while (!s.empty()) s.pop();
 		for (int j = 0; j < str.length(); j++) {
 			if (str[j] == '(') {
 				s.push(str[j]);
