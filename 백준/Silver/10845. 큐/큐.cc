@@ -1,47 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(void) {
+int main() {
+
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	queue<int> q;
+	queue <int> q;
 	int n;
-	string s;
 
 	cin >> n;
+
 	for (int i = 0; i < n; i++) {
-		cin >> s;
-		if (s == "push") {
-			int x;
-			cin >> x;
-			q.push(x);
+		string str;
+		cin >> str;
+
+		if (str == "push") {
+			int num;
+			cin >> num;
+			q.push(num);
 		}
-		else if (s == "pop") {
-			if (q.empty()) {
-				cout << -1 << "\n";
-			}
-			else {
+		else if (str == "pop") {
+			if (q.empty()) cout << "-1" << "\n";
+			else { 
 				cout << q.front() << "\n";
-				q.pop();
+				q.pop(); 
 			}
 		}
-		else if (s == "size") {
+		else if (str == "size") {
 			cout << q.size() << "\n";
 		}
-		else if (s == "empty") {
+		else if (str == "empty") {
 			cout << q.empty() << "\n";
 		}
-		else if (s == "front") {
-			if (q.empty()) {
-				cout << -1 << "\n";
-			}
+		else if (str == "front") {
+			if (q.empty()) cout << "-1" << "\n";
 			else cout << q.front() << "\n";
 		}
-		else if (s == "back") {
-			if (q.empty()) {
-				cout << -1 << "\n";
-			}
+		else if (str == "back") {
+			if (q.empty()) cout << "-1" << "\n";
 			else cout << q.back() << "\n";
 		}
 	}
