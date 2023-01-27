@@ -8,7 +8,6 @@ int main() {
 	cin.tie(0);
 	
 	int n;
-	int flag = 0;
 	stack<int> s;
 
 	cin >> n;
