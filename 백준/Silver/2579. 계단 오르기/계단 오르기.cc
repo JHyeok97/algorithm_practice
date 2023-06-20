@@ -6,8 +6,8 @@ int main()
 {
     int n;
     cin >> n;
-    vector<int> score(n + 5, 0);
-    vector<vector<int>> d(n + 5, vector<int>(2, 0));
+    vector<int> score(n + 2, 0);
+    vector<vector<int>> d(n + 2, vector<int>(2, 0));
 
     for (int i = 1; i <= n; i++)
     {
