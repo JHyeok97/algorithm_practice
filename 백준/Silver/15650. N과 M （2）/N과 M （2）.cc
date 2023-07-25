@@ -5,7 +5,7 @@ int n,m;
 int arr[10];
 bool isused[10];
 
-void Func(int k){
+void Func(int k, int idx){
     if(k==m){
         for(int i = 0; i < m; i++)
             cout << arr[i] << ' ';
@@ -13,14 +13,12 @@ void Func(int k){
         return;
     }
     
-    for(int i = 1; i <= n; i++){
+    for(int i = idx; i <= n; i++){
         if(!isused[i]){
             arr[k] = i;
-            for(int j = 1; j <= i; j++)
-                isused[j] = 1;
-            Func(k+1);
-             for(int j = 1; j <= i; j++)
-                isused[j] = 0;
+            isused[i] = 1;
+            Func(k+1,i+1);
+            isused[i] = 0;
         }
     }
 }
@@ -29,5 +27,5 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     cin >> n >> m;
-    Func(0);
+    Func(0,1);
 }
